@@ -18,8 +18,7 @@ boolean isBst(Tnode node){
 		return true;
 
 	boolean result=isBst(node.left);
-	result=result&&(node.data>lastVisited);
+	result&&=(node.data>lastVisited);
 	lastVisited=node.data;
-	result=result&&isBst(node.right);
-	return result;
+	return result&&isBst(node.right);
 }
