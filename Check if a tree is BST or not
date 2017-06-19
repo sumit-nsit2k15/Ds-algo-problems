@@ -1,0 +1,25 @@
+
+/****
+
+public class Tnode{
+
+int data;
+Tnode left;
+Tnode right;
+}
+
+****/
+
+
+int lastVisited=Integer.MIN_VALUE;
+
+boolean isBst(Tnode node){
+	if(node==null)
+		return true;
+
+	boolean result=isBst(node.left);
+	result=result&&(node.data>lastVisited);
+	lastVisited=node.data;
+	result=result&&isBst(node.right);
+	return result;
+}
